@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+<script type="text/javascript"  src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" ></script>
+<%- include("../partials/navbar") %>
+<div class="container text-center">
+		<div class="title py-5">
+			<h1>
+				Green screen
+			</h1>
+		</div>
+</div>
+<div class="container" id="container">
+	<canvas id="fgcan" class="canvas"></canvas>
+	<canvas id="bgcan" class="canvas"></canvas>
+</div>
+<div id = "site">
+	<p>
+		<label>Foreground:</label>
+		 <input type="file" multiple="false" accept="image/*" id="fgfile" onchange="loadForegroundImage()" >
+	</p>
+	<p>
+		<label>Background:</label>
+		<input type="file" multiple="false" accept="image/*" id="bgfile" onchange="loadBackgroundImage()">
+	</p>
+<p>
+	<input type="button" value="Create Composite" onclick="doGreenScreen()" id="ip">
+	<input type="button" value="clear canvases" onclick="clearCanvas()" id="ip">
+	<input type="button" value="Download" onclick="download_image()">
+</p>
+</div>
+<script type="text/javascript"  src="../../scripts/greenscreen.js"></script>
+<%- include("../partials/footer") %>

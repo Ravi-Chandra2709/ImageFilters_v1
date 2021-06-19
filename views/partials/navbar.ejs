@@ -1,0 +1,27 @@
+<header>
+		<a href="/" class="logo"><i class="fas fa-images fa-2x"></i></a>
+		<ul>
+			<% if(!currentUser){ %>
+				<li><a href="/login">login</a></li>
+				<li><a href="/register">signup</a></li>
+			<% } else{ %>
+				<li><a href="/login">Hi, <%= currentUser.username %></a></li>
+				<li><a href="/logout">logout</a></li>
+			<% } %>
+			<li><a href="/Greenscreen">Greenscreen</a></li>
+		</ul>
+</header>
+
+
+<!--  -->
+
+
+	<div class="container">
+       <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger"><p><%=error %></p></div>
+       <% } %>
+       
+       <% if(success && success.length > 0) { %>
+         <div class="alert alert-success"><p><%= success %></p></div>
+       <% } %>
+    </div>

@@ -1,0 +1,37 @@
+
+.<%- include("./partials/header") %>
+<%- include("./partials/navbar") %>
+<section class="section my-4">
+	<div class="container text-center">
+		<div class="title py-5">
+			<% if(!currentUser){ %>
+				<h1>
+					gallery	
+				</h1>
+			<% } else{ %>
+				<h1>
+					<%= currentUser.username %>'s gallery
+				</h1>
+			<% } %>
+			<a href="/Images/new" class="btn btn-primary" role="button" data-bs-toggle="button">Upload</a>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+					<% images.forEach(function(image){ %> 
+							<% if(image.imageBase64){ %>
+								<div class="col-md-3 col-sm-6">
+									<div class="thumbnail">
+									<% if(currentUser && image.author.id.equals(currentUser._id)){ %>
+										<img src="data:image/<%= image.contentType %>;base64,<%= image.imageBase64 %>" class="card-img-top" class="img-fluid">
+											<a class="btn btn-primary" href="/Images/<%= image.id %>">Show</a>
+									<% } %>
+									</div>
+								</div>
+							<% } %>
+					<% }) %>
+	</div>
+</div>
+<%- include("./partials/footer") %>
