@@ -56,13 +56,13 @@ route.get("/logout", function(req, res){
 
 route.get('/Images',async (req, res) => {
 		const images = await ImageModel.find();
-		res.render('index',{images : images });
+		res.render('Images/index',{images : images });
 });
 
 //new
 route.get('/Images/new', (req,res) => {
 	if (req.isAuthenticated()) {
-		res.render('new');
+		res.render('Images/new');
 	}
 	else{
 		res.render('login');	
@@ -127,14 +127,14 @@ route.get('/Images/:id', function(req,res){
         if(err){
             console.log(err);
         } else {
-            res.render('show', {image: foundImage});
+            res.render('Images/show', {image: foundImage});
         }
     });
 });
 //edit
 route.get("/Images/:id/edit", middleware.checkUserImage, function(req, res){
    ImageModel.findById(req.params.id, function(err, foundImage){
-        res.render("edit", {image : foundImage});
+        res.render("Images/edit", {image : foundImage});
     });
 });
 
@@ -158,16 +158,5 @@ route.delete("/Images/:id",middleware.checkUserImage, function(req, res){
       }
    });
 });
-//Greensscreen
-//new
-route.get('/Greenscreen',async (req, res) => {
-		if (req.isAuthenticated()) {
-		res.render('Greenscreen/new');
-	}
-	else{
-		res.render('login');	
-	}
-});
-
 
 module.exports = route;

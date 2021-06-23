@@ -2,13 +2,14 @@
 		<a href="/" class="logo"><i class="fas fa-images fa-2x"></i></a>
 		<ul>
 			<% if(!currentUser){ %>
-				<li><a href="/login">login</a></li>
-				<li><a href="/register">signup</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/register">Signup</a></li>
 			<% } else{ %>
-				<li><a href="/login">Hi, <%= currentUser.username %></a></li>
-				<li><a href="/logout">logout</a></li>
+				<li><a href="#">Hi, <%= currentUser.username %></a></li>
+				<li><a href="/logout">Logout</a></li>
+				<li><a href="/Greenscreen">Greenscreen</a></li>
+				<li><a href="/steganography">Steganography</a></li>
 			<% } %>
-			<li><a href="/Greenscreen">Greenscreen</a></li>
 		</ul>
 </header>
 

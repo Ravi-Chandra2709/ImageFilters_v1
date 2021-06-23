@@ -61,7 +61,9 @@ require('./server/database/database')();
 
 
 //routes
-app.use('/',require('./server/routes/router'));
+app.use('/',require('./server/routes/images'));
+app.use('/Greenscreen',require('./server/routes/Greenscreen'));
+app.use('/steganography',require('./server/routes/steganography'));
 
 
 app.listen(PORT, process.env.IP, function(){

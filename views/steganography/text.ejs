@@ -1,0 +1,36 @@
+<%- include("../partials/Steg/header") %>
+<%- include("../partials/Steg/navbar") %>
+<div class="cont" id="textinimage">
+		<h2>
+			Text-in-Image	
+		</h2>
+        <div class="">
+                 <input class="ui primary button" type="file" name="pic" accept="image/*" onchange="readURL(this);"/>
+				<div class="ui input">
+				  <input id="text" type="text" />
+				</div>
+				<button class="ui secondary button" onclick="hideText()">Hide Message Into Image</button>
+        </div>
+        <div class="img-cont">
+			  <div  class="img1">
+				<h5>Source Image</h5>
+				<img id="image1" src="" alt="" />
+			  </div>
+
+			  <div class="" id="encodedimg">
+				<h5>Message Encoded Image</h5>
+				<img id="image2" src="" alt="" />
+				 <a class="ui primary button" href="#" onclick="prepHref(this)" download>download</a> 
+			  </div>
+        </div>
+		<div class="img-cont">
+			 <img id="image3" src="" alt="" />
+		</div>
+		<div class="decode">
+		  <h5>To Decode the Text in the image, upload your <q>steg_image</q></h5>
+		  <input class="ui secondary button" type="file" name="pic2" accept="image/*" onchange="treadURL(this);" />
+			<button class="ui secondary button" onclick="decode()">Decode Message From Image</button>
+		  <h6><span id="decoded"></span></h6>
+		</div>
+</div>
+<%- include("../partials/Steg/footer") %>

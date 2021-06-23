@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&family=Roboto&display=swap');
+
+body
+{
+	font-family: 'Roboto',sans-serif;
+	background-color: #4ca1af;
+}
+#menu a
+{
+	color: #fff;
+	font-weight: 400;
+}
+h2
+{
+	font-size: 4em;
+	line-height: 1.5em;
+	font-weight: 900;
+	text-align: center;
+	font-family: 'Poppins',sans-serif;
+	background: linear-gradient(90deg, #f00,#ff2b00,#f50,#ff8000,#fa0,#ffd500,#ff0,#d4ff00,#af0,#80ff00,#5f0,#2bff00,#0f0,#00ff2b,#0f5,#00ff80,#0fa,#00ffd5,#0ff,#00d4ff,#0af,#007fff,#05f,#002bff,#00f,#2a00ff,#50f,#7f00ff,#a0f,#d400ff,#f0f,#ff00d4,#f0a,#ff0080,#f05,#ff002b,#f00);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+	margin-bottom: 2%;
+}
+.cont {
+    display: flex;
+    height: 90vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-cont {
+    margin-top: 5rem;
+    display: flex;
+
+}
+
+.img1 {
+    margin-right: 15rem;
+    margin-bottom: 10rem;
+}
+
+img {
+    width: 300px;
+}
+
+
+.opa {
+    opacity: 0;
+    width: 10px;
+}
+
+canvas {
+	padding-left: 0;
+    padding-right: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  	height: 300px;
+  	border: 2px outset #ffffff;
+  	color: white;
+}
+#decoded
+{
+	width: auto; 
+    float: left; 
+    font-size: 5em;
+    margin: 2% auto;
+    display: block;
+}
+h6
+{
+	text-align: center;
+}
+#image3
+{
+	margin-bottom: 5%;
+}
+.decode
+{
+	margin-top: 3%;
+}
+#imageinimage
+{
+	margin-top: 30%;
+}

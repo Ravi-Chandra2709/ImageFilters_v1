@@ -1,15 +1,15 @@
-<%- include("./partials/header") %>
+<%- include("partials/Img/header") %>
 <link rel="stylesheet" href="/css/landing.css">
 <section class="sec">
 	<header>
 		<a href="/" class="logo"><i class="fas fa-images fa-2x"></i></a>
 		<ul>
 			<% if(!currentUser){ %>
-				<li><a href="/login">login</a></li>
-				<li><a href="/register">signup</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/register">Signup</a></li>
 			<% } else{ %>
-				<li><a href="/login">Hi, <%= currentUser.username %></a></li>
-				<li><a href="/logout">logout</a></li>
+				<li><a href="#">Hi, <%= currentUser.username %></a></li>
+				<li><a href="/logout">Logout</a></li>
 			<% } %>
 		</ul>
 	</header>
@@ -27,4 +27,4 @@
 		<img src="https://img.freepik.com/free-vector/photo-camera-blue-background-design_24877-12461.jpg?size=626&ext=jpg" class="image1">
 	</div>
 </section>
-<%- include("./partials/footer") %>
+<%- include("partials/Img/footer") %>

@@ -62,6 +62,8 @@ function doGreenScreen() {
 function clearCanvas() {
   doClear(fgCanvas);
   doClear(bgCanvas);
+  document.getElementById("fgfile").value = "";
+  document.getElementById("bgfile").value = "";
 }
 
 function doClear(canvas) {
