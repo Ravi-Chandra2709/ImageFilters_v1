@@ -17,8 +17,36 @@ function loadBackgroundImage() {
   bgImage.drawTo(bgCanvas);
 }
 
+function crop(image,width,height){
+    var n = new SimpleImage(width,height);
+    for(var p of image.values()){
+   	   var x = p.getX();
+   	   var y = p.getY();
+  	   if (x < width && y < height){
+       var np = n.getPixel(x,y);
+       np.setRed(p.getRed());
+       np.setBlue(p.getBlue());
+       np.setGreen(p.getGreen()); 
+       }
+    }
+    return n;
+}
+
 function createComposite() {
-  // this function creates a new image with the dimensions of the foreground image and returns the composite green screen image
+	fgImage.setSize(500, 300);
+	bgImage.setSize(500, 300);
+	
+	var cropWidth = fgImage.getWidth();
+	if (bgImage.getWidth() < cropWidth) {
+		cropWidth = bgImage.getWidth();
+	}
+	var cropHeight = fgImage.getHeight();
+	if (bgImage.getHeight() < cropHeight) {
+		cropHeight = bgImage.getHeight();
+	}
+	fgImage = crop(fgImage,cropWidth, cropHeight);
+	bgImage = crop(bgImage,cropWidth, cropHeight);
+	
   var output = new SimpleImage(fgImage.getWidth(),fgImage.getHeight());
   for (var pixel of fgImage.values()) {
     var x = pixel.getX();
@@ -46,7 +74,6 @@ function doGreenScreen() {
   }
   // clear canvases
   clearCanvas();
-  // call createComposite, which does green screen algorithm and returns a composite image
   var finalImage = createComposite();
   finalImage.drawTo(fgCanvas);
 		var sec_can = document.getElementById("bgcan");
