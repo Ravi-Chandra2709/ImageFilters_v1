@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Poppins|Gafata|Montez|Averia+Sans+Libre|Vampiro+One:200,300,400,500,600,700,800,900&family=Roboto&display=swap');
 body
 {
 	font-family: 'Roboto',sans-serif;
-	background-color: #4ca1af;
+    background: #66FCF1;
+}
+.home
+{
+	padding:auto;
+	margin:auto;
+	align-content: center;
 }
 header
 {
@@ -20,7 +25,11 @@ header .logo
 {
 	position: relative;
 	max-width: 80px;
-	color: #fff;
+	color: #0B0C10;
+}
+header .logo:hover
+{
+	color: #eb2f06;	
 }
 header ul
 {
@@ -31,12 +40,15 @@ header ul
 header ul li a 
 {
 	display: inline-block;
-	color: #fff;
+	color: #0B0C10;
 	font-weight: 400;
 	margin-left: 40px;
 	text-decoration: none;
 }
-
+header ul li a:hover
+{
+	color: #eb2f06;
+}
 
 .row.display-flex {
   display: flex;
@@ -63,15 +75,12 @@ h1
 	line-height: 1.5em;
 	font-weight: 900;
 	text-align: center;
-	font-family: 'Poppins',sans-serif;
-	background: linear-gradient(90deg, #f00,#ff2b00,#f50,#ff8000,#fa0,#ffd500,#ff0,#d4ff00,#af0,#80ff00,#5f0,#2bff00,#0f0,#00ff2b,#0f5,#00ff80,#0fa,#00ffd5,#0ff,#00d4ff,#0af,#007fff,#05f,#002bff,#00f,#2a00ff,#50f,#7f00ff,#a0f,#d400ff,#f0f,#ff00d4,#f0a,#ff0080,#f05,#ff002b,#f00);
-    color: #0000;
-    -webkit-background-clip: text;
-    background-clip: text;
+  font-family: 'Montez';
+   color: darken(black, 20%);
 }
 
 .imgx {
-  border: 1px solid #ddd;
+  border: 1px solid #0B0C10;
   border-radius: 4px;
   padding: 5px;
   width: 400px;
@@ -114,14 +123,18 @@ p#ip{
 	display: inline-block;
 }
 #fgfile{
-	color: white;
+	color: #0B0C10;
 }
 #bgfile{
-  color: white;
+  color: #0B0C10;
+}
+#label2
+{
+  margin-left: 5%;
 }
 
 .canvas {
-  border: 1px outset #eee;
+  border: 1px outset #0B0C10;
   height: 200px;
 }
 
@@ -130,5 +143,49 @@ p#ip{
 }
 label{
   font-style: inherit;
-  color: #eee;
+  color: #0B0C10;
+}
+
+#c1{
+	padding-left: 0;
+    padding-right: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  	height: 300px;
+  	border: 2px outset #0B0C10;
+  	color: #0B0C10;
+}
+#site{
+	margin-top: 3%;
+	text-align: center;
+}
+.buttons
+{ 
+	display: inline-block;
+}
+
+hr{
+    overflow: visible;
+    padding: 0;
+	margin-bottom: 2%;
+    border: none;
+    border-top: medium double #0B0C10;
+    color: #0B0C10;
+    text-align: center;
+	top: -2em;
+	position: relative;
+	max-width: 50%;
+	left: 21em;
+}
+hr:after {
+    content: "☂☂☂";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+	color: #0B0C10;
+    background: #66FCF1;
 }

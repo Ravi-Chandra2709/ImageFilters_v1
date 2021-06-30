@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Poppins|Gafata|Montez|Averia+Sans+Libre|Vampiro+One:200,300,400,500,600,700,800,900&family=Roboto&display=swap');
 body
 {
 	font-family: 'Roboto',sans-serif;
-	background-color: #4ca1af;
+     background: #66FCF1;
 }
 #menu a
 {
-	color: #fff;
+	color: #0B0C10;
 	font-weight: 400;
+}
+#menu a:hover
+{
+	color:#eb2f06;
 }
 h2
 {
@@ -16,12 +19,8 @@ h2
 	line-height: 1.5em;
 	font-weight: 900;
 	text-align: center;
-	font-family: 'Poppins',sans-serif;
-	background: linear-gradient(90deg, #f00,#ff2b00,#f50,#ff8000,#fa0,#ffd500,#ff0,#d4ff00,#af0,#80ff00,#5f0,#2bff00,#0f0,#00ff2b,#0f5,#00ff80,#0fa,#00ffd5,#0ff,#00d4ff,#0af,#007fff,#05f,#002bff,#00f,#2a00ff,#50f,#7f00ff,#a0f,#d400ff,#f0f,#ff00d4,#f0a,#ff0080,#f05,#ff002b,#f00);
-    color: #0000;
-    -webkit-background-clip: text;
-    background-clip: text;
-	margin-bottom: 2%;
+  font-family: 'Montez';
+   color: darken(black, 20%);
 }
 .cont {
     display: flex;
@@ -61,8 +60,8 @@ canvas {
     margin-right: auto;
     display: block;
   	height: 300px;
-  	border: 2px outset #ffffff;
-  	color: white;
+  	border: 2px outset #0B0C10;
+  	color: #0B0C10;
 }
 #decoded
 {
@@ -74,6 +73,7 @@ canvas {
 }
 h6
 {
+	color: #0B0C10;
 	text-align: center;
 }
 #image3
@@ -86,5 +86,27 @@ h6
 }
 #imageinimage
 {
-	margin-top: 30%;
+	margin-top: 20%;
+}
+
+#hr{
+    overflow: visible;
+    padding: 0;
+	margin-bottom: 2%;
+    border: none;
+    border-top: medium double #0B0C10;
+    color: #0B0C10;
+    text-align: center;
+	top: -2em;
+	position: relative;
+}
+#hr:after {
+    content: "☂☂☂";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+	color: #0B0C10;
+    background: #66FCF1;
 }
