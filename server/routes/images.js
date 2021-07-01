@@ -101,14 +101,41 @@ route.post('/Images',middleware.isLoggedIn,store.array('images',4), (req,res,nex
 			.save()
 			.then(() =>
 			{
-				return { msg : `${files[index].originalname} uploaded successfully..!`}
+				return { msg : `${files[index].originalname} uploaded successfully..!`};
 			})
 			.catch(error =>{
                     if(error){
                         if(error.name === 'MongoError' && error.code === 11000){
-                            return Promise.reject({ error : `Duplicate ${files[index].originalname}. File Already exists! `});
+								let imageArray = files.map((file) => {
+									let img = fs.readFileSync(file.path);
+									return encode_image = img.toString('base64');
+								})
+								const result = imageArray.map((src,index) => {
+									files[index].originalname = files[index].originalname+"new";
+									const newFinalImg = {
+										filename: files[index].originalname,
+										contentType: files[index].mimetype,
+										imageBase64: src,
+										author:{
+											id: req.user._id,
+											username: req.user.username,
+											email : req.user.email
+										}
+									}
+									const newUpload = new ImageModel(newFinalImg);
+							    	return newUpload
+									.save()
+									.then(() =>
+									{
+										return { msg : `${files[index].originalname} uploaded successfully..!`};
+									})
+									.catch(error =>{
+											if(error){
+												return Promise.reject({ error : error.message || `Cannot Upload ${files[index].originalname} Something Missing!`})
+											}
+									});
+								})
                         }
-                        return Promise.reject({ error : error.message || `Cannot Upload ${files[index].originalname} Something Missing!`})
                     }
                 })
 		});

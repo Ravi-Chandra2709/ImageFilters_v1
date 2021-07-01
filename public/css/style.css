@@ -4,12 +4,6 @@ body
 	font-family: 'Roboto',sans-serif;
     background: #66FCF1;
 }
-.home
-{
-	padding:auto;
-	margin:auto;
-	align-content: center;
-}
 header
 {
 	position: absolute;
