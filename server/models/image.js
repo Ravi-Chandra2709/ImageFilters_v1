@@ -21,7 +21,8 @@ const imageSchema = new Schema({
          type: Schema.Types.ObjectId,
          ref: "User"
       },
-      username: String
+      username: String,
+	  email : String
    }
 });
 

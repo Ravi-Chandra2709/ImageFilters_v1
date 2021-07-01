@@ -17,8 +17,8 @@ route.get("/register", function(req, res){
 });
 
 //handle sign up logic
-route.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username});
+route.post("/register", async function(req, res){
+    var newUser = await new User({email: req.body.email,username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
@@ -91,7 +91,8 @@ route.post('/Images',middleware.isLoggedIn,store.array('images',4), (req,res,nex
 			imageBase64: src,
 			author : {
         			id: req.user._id,
-       			 	username: req.user.username
+       			 	username: req.user.username,
+					email : req.user.email
     		}
 		}
 		

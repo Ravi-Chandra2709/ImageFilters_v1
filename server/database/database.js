@@ -8,8 +8,6 @@ const Connect = async () => {
 			useUnifiedTopology: true,
 			useFindAndModify: false,
 			useCreateIndex: true
-			
-			
 		});
 		
 	console.log(`mongodb connected: ${con.connection.host}`);
