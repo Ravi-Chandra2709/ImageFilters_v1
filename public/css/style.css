@@ -189,3 +189,9 @@ hr:after {
 	color: #0B0C10;
     background: #66FCF1;
 }
+
+.links a 
+{
+ display:inline-block; 
+ margin-right:10px;
+}
